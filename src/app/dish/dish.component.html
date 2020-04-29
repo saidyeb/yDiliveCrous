@@ -2,14 +2,14 @@
  
  <img width="100%" [src]="dish.urlImg" />
 
- <ion-card-header [class.p-0]="isDetailRoute()" class="pb-0">
+ <ion-card-header [class.p-0]="!isDetailRoute()" class="pb-0">
     <ion-item lines="none">
       <ion-card-title color="dark">{{dish.name | titlecase}}</ion-card-title>
       <ion-card-title slot="end" color="dark">{{dish.price | currency:'EUR'}}</ion-card-title>
     </ion-item>
   </ion-card-header> 
 
-  <ion-card-content [class.p-0]="isDetailRoute()">
+  <ion-card-content [class.p-0]="!isDetailRoute()">
     <ion-grid>
       <ion-row>
         
@@ -17,11 +17,11 @@
           
           <ion-row class="ion-padding-bottom">
             <ion-item lines="none">
-              <ion-label [class.nowrap-first-lines]="isDetailRoute()" class="ion-text-wrap ion-text-start ion-text-justify">{{dish.description | titlecase}}</ion-label>
+              <ion-label [class.nowrap-first-lines]="!isDetailRoute()" class="ion-text-wrap ion-text-start ion-text-justify">{{dish.description | titlecase}}</ion-label>
             </ion-item>
           </ion-row>
           
-          <span *ngIf="!isDetailRoute()">
+          <span *ngIf="isDetailRoute()">
             <ion-row><ion-card-title>Allergens</ion-card-title></ion-row>
             <ion-row>
               <ion-list lines="none">
@@ -34,14 +34,14 @@
 
         </ion-col>
         
-        <ion-col size="2" *ngIf="!isDetailRoute()">
+        <ion-col size="2" *ngIf="isDetailRoute()">
           <ion-checkbox class="ion-float-right" color="danger" [(ngModel)]="dish.isSelected"></ion-checkbox>
         </ion-col>
       
       </ion-row>
     </ion-grid>
 
-    <ion-item class="ion-float-right" *ngIf="isDetailRoute()" >
+    <ion-item class="ion-float-right" *ngIf="!isDetailRoute()" >
       <ion-checkbox  color="danger" [(ngModel)]="dish.isSelected"></ion-checkbox>
     </ion-item>
     
