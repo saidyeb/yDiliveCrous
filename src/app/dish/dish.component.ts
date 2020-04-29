@@ -18,7 +18,11 @@ export class DishComponent implements OnInit {
   ngOnInit() {}
 
   public isDetailRoute() : boolean {
-    return this.router.url.endsWith("/details");
+    const routeMatch = this.router.url.match("details/([0-9]+)$"); 
+    if(routeMatch != null && routeMatch.length > 0)
+      return routeMatch[0].length > 0
+
+    return false;
   }
 
 }
