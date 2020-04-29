@@ -1,34 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DishModel } from '../models/dish';
+import { MockService } from '../services/mock.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   protected dishes : Array<DishModel> = [];
   
-  constructor() {
+  constructor(private mockService: MockService) {
     this.initDishes();
   }
 
-  public initDishes() : void {
-    const dish : DishModel = {
-      id : 1, 
-      name: "test name", 
-      description : "test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description", 
-      allergens: ["tefa7a", "ber9u9a", "be3wida"],
-      price : 100.23549999,
-      isSelected: true, 
-      urlImg: "https://via.placeholder.com/150"
-    }; 
-
-    for(let i = 0; i < 50; i++)
-      this.dishes.push(dish); 
+  ngOnInit() {
+    this.initDishes();
   }
 
-
-
+  private initDishes() : void {
+    this.dishes = this.mockService.getDishes();
+  }
+  
 }

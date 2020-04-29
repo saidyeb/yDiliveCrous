@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { DishComponent } from '../dish/dish.component';
 
 import { HomeRoutingModule } from './home-routing.module';
+import { DishDetailComponent } from '../dish-detail/dish-detail.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   declarations: [
     HomeComponent, 
-    DishComponent
+    DishComponent, 
+    DishDetailComponent
   ]
 })
 export class HomeModule {}
