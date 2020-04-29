@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card (click)="redirectDetails($event)">
  
  <img width="100%" [src]="dish.urlImg" />
 
@@ -35,7 +35,7 @@
         </ion-col>
         
         <ion-col size="2" *ngIf="isDetailRoute()">
-          <ion-checkbox class="ion-float-right" color="danger" [(ngModel)]="dish.isSelected"></ion-checkbox>
+          <ion-checkbox class="ion-float-right" color="danger" [(ngModel)]="dish.isSelected" (click)="updateSelectDish($event, dish)"></ion-checkbox>
         </ion-col>
       
       </ion-row>
