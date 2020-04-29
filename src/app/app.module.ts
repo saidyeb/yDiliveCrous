@@ -12,10 +12,12 @@ import { AppRoutingModule } from './app-routing.module';
 //France format date, devise...
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { TabsComponent } from './tabs/tabs.component';
 import { MockService } from './services/mock.service';
 registerLocaleData(localeFr);
 
 @NgModule({
+  declarations: [AppComponent, TabsComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [

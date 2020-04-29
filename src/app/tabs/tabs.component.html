@@ -1,0 +1,18 @@
+<ion-tabs>
+  <ion-tab-bar slot="top">
+
+    <ion-tab-button routerLink="/home" *ngIf="isDetailRoute()">
+      <ion-icon color="dark" name="chevron-back-sharp"></ion-icon>
+    </ion-tab-button>
+
+    <ion-item class="ion-padding ion-margin" lines="none">
+      <ion-label>YdeliveCours</ion-label>
+    </ion-item>
+
+    <ion-tab-button tab="cart">
+      <ion-icon color="dark" name="cart"></ion-icon>
+      <ion-badge color="danger">{{mockService.getSelectedDishes().length}}</ion-badge>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
