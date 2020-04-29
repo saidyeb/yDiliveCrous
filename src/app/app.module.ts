@@ -12,15 +12,16 @@ import { AppRoutingModule } from './app-routing.module';
 //France format date, devise...
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { MockService } from './services/mock.service';
 registerLocaleData(localeFr);
 
 @NgModule({
-  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
+    MockService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     {
       provide: LOCALE_ID,
