@@ -1,7 +1,7 @@
 <ion-tabs>
   <ion-tab-bar slot="top">
 
-    <ion-tab-button routerLink="/home" *ngIf="isDetailRoute()">
+    <ion-tab-button routerLink="/home" *ngIf="isDisplayBackButton()">
       <ion-icon color="dark" name="chevron-back-sharp"></ion-icon>
     </ion-tab-button>
 
@@ -9,7 +9,7 @@
       <ion-label>YdeliveCours</ion-label>
     </ion-item>
 
-    <ion-tab-button tab="cart">
+    <ion-tab-button routerLink="/panel" tab="panel">
       <ion-icon color="dark" name="cart"></ion-icon>
       <ion-badge color="danger">{{mockService.getSelectedDishes().length}}</ion-badge>
     </ion-tab-button>
