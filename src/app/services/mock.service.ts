@@ -13,6 +13,7 @@ export class MockService {
   }
 
   private initDishes() : void {
+    this.dishes = Object.assign([], []);
     for(let i = 1; i <= 50; i++) {
       let dish : DishModel = {
         id : i, 
@@ -26,6 +27,8 @@ export class MockService {
       this.dishes.push(dish); 
     }
   }
+
+  resetDishes= () => this.dishes.forEach(x => x.isSelected = false);
 
   getDishes= () : Array<DishModel> => this.dishes; 
 

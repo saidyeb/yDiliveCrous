@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="!isCommandValidated">
   <ion-card *ngFor="let dish of dishes">
  
     <ion-grid>
@@ -25,8 +25,46 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-   </ion-card>
+  </ion-card>
+
+  <ion-grid>
+  <ion-row> 
+    <ion-text color="dark">
+      <h2>Où veux-tu te faire livrer ?</h2>
+      <h2>Dis-nous tout, tout !!!</h2> 
+    </ion-text>
+  </ion-row>
+  <ion-row>
+    <form (ngSubmit)="validCommandDishes()">
+      <ion-item lines="none">
+        <ion-label>Rue</ion-label>
+        <ion-input clearInput type="text" name="street" [(ngModel)]="address.street"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+          <ion-label>Ville</ion-label>
+          <ion-select placeholder="Choisis ta ville..." name="city" [(ngModel)]="address.city">
+            <ion-select-option value="FR">Lille</ion-select-option>
+            <ion-select-option value="MA">Valenciennes</ion-select-option>
+            <ion-select-option value="MAL">Ain Harouda</ion-select-option>
+            <ion-select-option value="GUA">Jdida</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Code postal</ion-label>
+        <ion-input type="number" name="zipCode" [(ngModel)]="address.zipCode"></ion-input>
+      </ion-item>
+
+      <div class="ion-padding">
+        <ion-button type="submit" expand="block">Commander</ion-button>
+      </div>
+    </form>
+  </ion-row>
+  </ion-grid>
 </ion-content>
+
+<div *ngIf="isCommandValidated">
+  <panel-command [address]="address" [dishes]="dishes"></panel-command>
+</div>
 
 
  

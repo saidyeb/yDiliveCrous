@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MockService } from '../services/mock.service';
 import { DishModel } from '../models/dish';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AddressModel } from '../models/address';
 
 @Component({
   selector: 'app-panel',
@@ -11,11 +14,17 @@ import { ToastController } from '@ionic/angular';
 export class PanelComponent implements OnInit {
 
   protected dishes : Array<DishModel> = []; 
+  protected address: AddressModel;
 
-  constructor(private mockService : MockService, public toastController: ToastController) { }
+  protected isCommandValidated : boolean;
+
+  constructor(private mockService : MockService, 
+    public toastController: ToastController) { }
 
   ngOnInit() {
-    this.dishes = this.mockService.getSelectedDishes().map(x => Object.assign({}, x));;
+    this.dishes = this.mockService.getSelectedDishes().map(x => Object.assign({}, x));
+    this.address = {street: "", city: "", zipCode:59000}; 
+    this.isCommandValidated = false;
   }
 
   public removeDish(dish : DishModel) {
@@ -36,8 +45,12 @@ export class PanelComponent implements OnInit {
       duration: 2000,
       message: `Le menu ${dish.name.toUpperCase()} est supprimé !`
     });
-
     await toast.present();
+  }
+
+  public validCommandDishes() : void {
+     this.isCommandValidated = true;
+     this.mockService.resetDishes();
   }
 
 }
