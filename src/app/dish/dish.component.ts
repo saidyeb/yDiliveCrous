@@ -12,7 +12,7 @@ import { MockService } from '../services/mock.service';
 })
 export class DishComponent implements OnInit {
 
-  @Input() protected dish : DishModel; 
+  @Input() public dish : DishModel; 
 
   constructor(private mockService : MockService, private router: Router) { }
 

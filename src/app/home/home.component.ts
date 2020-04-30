@@ -9,7 +9,7 @@ import { MockService } from '../services/mock.service';
 })
 export class HomeComponent implements OnInit {
 
-  protected dishes : Array<DishModel> = [];
+  public dishes : Array<DishModel> = [];
   
   constructor(private mockService: MockService) {
     this.initDishes();

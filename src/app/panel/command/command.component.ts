@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class CommandComponent implements OnInit {
 
-  @Input() protected address: AddressModel; 
-  @Input() protected dishes: Array<DishModel>;
-  @Input() protected isCommandValidated: boolean;
+  @Input() public address: AddressModel; 
+  @Input() public dishes: Array<DishModel>;
+  @Input() public isCommandValidated: boolean;
 
-  protected totalPrice : number = 0; 
+  public totalPrice : number = 0; 
 
   constructor() { }
 

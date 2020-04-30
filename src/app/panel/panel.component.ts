@@ -13,10 +13,9 @@ import { AddressModel } from '../models/address';
 })
 export class PanelComponent implements OnInit {
 
-  protected dishes : Array<DishModel> = []; 
-  protected address: AddressModel;
-
-  protected isCommandValidated : boolean;
+  public dishes : Array<DishModel> = []; 
+  public address: AddressModel;
+  public isCommandValidated : boolean;
 
   constructor(private mockService : MockService, 
     public toastController: ToastController) { }

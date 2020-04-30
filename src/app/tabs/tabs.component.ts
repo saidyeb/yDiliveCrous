@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TabsComponent implements OnInit {
 
-  constructor(private mockService : MockService, private router: Router) { }
+  constructor(public mockService : MockService, private router: Router) { }
 
   ngOnInit() {}
 

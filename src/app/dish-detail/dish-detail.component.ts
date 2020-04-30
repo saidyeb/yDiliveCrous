@@ -10,7 +10,7 @@ import { MockService } from '../services/mock.service';
 })
 export class DishDetailComponent implements OnInit {
 
-  protected dish : DishModel;
+  public dish : DishModel;
   
   constructor(private mockService : MockService, private route: ActivatedRoute) { 
   }
