@@ -4,10 +4,14 @@ import { PanelComponent } from './panel.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { PanelRoutingModule } from './panel-routing.module';
+import { CommandComponent } from './command/command.component';
 
 
 @NgModule({
-  declarations: [PanelComponent],
+  declarations: [
+    PanelComponent, 
+    CommandComponent
+  ],
   imports: [
     PanelRoutingModule,
     CommonModule, 
