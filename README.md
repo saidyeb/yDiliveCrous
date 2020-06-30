@@ -41,7 +41,7 @@ The project aims to implement a mobile application based on Ionic 5 and Angular 
 ### Build & Deploy Android 
     ionic build --prod --platform=android
 
-## Resources (Documentation and other links)
+## Resources
 Ionic : <https://ionicframework.com/docs>
 Ionic Angular : <https://ionicframework.com/docs/angular/overview>
 Ionic deploy Android : <https://capacitorjs.com/docs/android/deploying-to-google-play>
